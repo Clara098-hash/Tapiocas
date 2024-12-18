@@ -1,0 +1,405 @@
+/* Resetando margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo o estilo básico do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3A3B3C;
+    color: #333;
+    padding: 10px;
+}
+
+/* Estilo do header */
+header {
+    background-color: #03EA05;
+    color: #248B46;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #248B46; /* Borda preta no header */
+    margin-bottom: 10px; /* Margem de 20px abaixo do header */
+}
+
+header h1 {
+    font-size: 3em;
+    color: #248B46;
+    margin-bottom: 10px;
+}
+
+/* Alinhamento dos itens no header (CPF e botão) */
+.header-actions {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    width: 100%;
+    gap: 10px;                /* Espaço entre os itens */
+    flex-direction: column;   /* Organiza os itens de forma vertical */
+}
+
+.cpf-comida {
+    display: flex; /* Torna o container flexível */
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+    align-items: center; /* Centraliza verticalmente os itens (opcional) */
+    gap: 20px; /* Espaço entre os itens */
+}
+
+#base-options {
+    display: flex; /* Torna o container das opções também flexível */
+    gap: 10px; /* Espaço entre as opções */
+}
+
+/* Estilo para a seção do CPF */
+.cpf-section {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre o texto e o campo de CPF */
+    border: 2px solid #E9AFFF; /* Borda preta na seção do CPF */
+    padding: 10px;
+    background-color: #E904EA;
+    border-radius: 10px;
+    flex-grow: 1; /* Deixa a seção do CPF ocupar o maior espaço possível */
+    margin-bottom: 10px;
+}
+
+.cpf-section input {
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #E9AFFF;
+    flex-grow: 2; /* Faz o input crescer para ocupar mais espaço */
+}
+
+/* Estilos básicos para o modal */
+.modal {
+    display: none; /* Esconde o modal por padrão */
+    position: fixed; /* Fica fixo na tela */
+    z-index: 1; /* Coloca o modal sobre outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Se necessário, adiciona barra de rolagem */
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semitransparente */
+}
+
+/* Estilos do conteúdo do modal */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo do botão de fechar */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Muda a cor do botão de fechar quando passa o mouse */
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo do histórico de compras */
+#salesHistory {
+    margin-top: 10px;
+}
+
+.sale {
+    background-color: #AEEA00;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sale p {
+    margin: 5px 0;
+}
+
+/* Estilo do botão */
+button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 250px;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #48057A;
+}
+
+/* Estilos para o container principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Colunas para as seções */
+.column {
+    flex: 1;
+    min-width: 280px;
+    background-color: #E904EA; 
+    border: 2px solid #E9AFFF;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Títulos das colunas */
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* Estilos para as opções de comida */
+/* Aumenta o tamanho da fonte das opções de base e recheio */
+#base-options label,
+#recheios label {
+    font-size: 1.2em;  /* Aumenta o tamanho da fonte */
+    font-weight: bold;
+    display: flex;
+    align-items: center; /* Alinha o texto e o checkbox ao centro */
+    gap: 10px; /* Espaço entre o checkbox e o texto */
+    margin: 10px 0;
+}
+
+/* Tamanho maior para os preços */
+#base-options label span,
+#recheios label span {
+    font-size: 1.5em;  /* Aumenta o tamanho da fonte para o preço */
+    font-weight: normal;
+    margin-left: 10px; /* Espaço entre o texto e o preço */
+    font-weight: bold;
+}
+
+/* Estilo básico do checkbox */
+input[type="checkbox"] {
+    appearance: none; /* Remove o estilo padrão do checkbox */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #000; /* Borda preta */
+    border-radius: 12px; /* Bordas arredondadas */
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Estilo do checkbox quando está marcado */
+input[type="checkbox"]:checked {
+    background-color: #007BFF; /* Cor de fundo azul quando marcado */
+    border-color: #007BFF; /* Cor da borda azul */
+}
+
+/* Estilo do "checkmark" dentro do checkbox */
+input[type="checkbox"]:checked::before {
+    content: "";
+    position: absolute;
+    top: -5px; /* Move o checkmark para cima */
+    left: 5px; /* Move o checkmark para a direita */
+    width: 15px; /* Largura maior do checkmark */
+    height: 20px; /* Altura maior do checkmark */
+    border: solid black;
+    border-width: 0 5px 5px 0; /* Desenha o "checkmark" */
+    transform: rotate(45deg); /* Rotaciona para formar o "check" */
+    animation: checkmark-animation 0.3s ease-in-out; /* Animação de entrada */
+}
+
+/* Adicionando efeito de hover ao checkbox */
+input[type="checkbox"]:hover {
+    border-color: #0056b3; /* Borda mais escura quando passa o mouse */
+    background-color: #f0f8ff; /* Fundo mais claro no hover */
+}
+
+/* Alinhamento dos checkboxes */
+input[type="checkbox"] {
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+
+/* Estilos do preview e resumo */
+.preview,
+#summary {
+    background-color: #E9AFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #000; /* Borda preta no preview e resumo */
+    margin-bottom: 20px;
+}
+
+/* Estilo básico do radio button */
+input[type="radio"] {
+    appearance: none; /* Remove o estilo padrão do radio */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 30px; /* Aumenta a largura do radio */
+    height: 30px; /* Aumenta a altura do radio */
+    border: 3px solid #000; /* Borda preta */
+    border-radius: 50%; /* Torna o radio redondo */
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Estilo do radio quando está marcado */
+input[type="radio"]:checked {
+    background-color: #007BFF; /* Cor de fundo azul quando marcado */
+    border-color: #007BFF; /* Cor da borda azul */
+}
+
+/* Estilo do "checkmark" dentro do radio */
+input[type="radio"]:checked::before {
+    content: "";
+    position: absolute;
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    width: 18px; /* Tamanho do "checkmark" dentro do radio */
+    height: 18px; /* Tamanho do "checkmark" dentro do radio */
+    border-radius: 50%; /* Torna o "checkmark" redondo */
+    background-color: #000; /* Cor do "checkmark" */
+    transform: translate(-50%, -50%); /* Centraliza com base no seu tamanho */
+}
+
+
+#messageBox {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Estilo para o popup */
+.popup {
+    display: none; /* Inicialmente invisível */
+    position: fixed;
+    z-index: 1; /* Fica acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total da tela */
+    height: 100%; /* Altura total da tela */
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semitransparente */
+    padding-top: 60px;
+}
+
+/* Estilo do conteúdo do popup */
+.popup-content {
+    background-color: red;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; /* Largura do popup */
+    max-width: 400px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    position: relative; /* Torna a caixa posicionada para conter o botão de fechar */
+}
+
+/* Estilo para o botão de fechar */
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Ajuste a posição dentro da caixa */
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/* Estilo para o sucesso */
+.sucesso {
+    display: none; /* Inicialmente invisível */
+    position: fixed;
+    z-index: 1; /* Fica acima de outros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Largura total da tela */
+    height: 100%; /* Altura total da tela */
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semitransparente */
+    padding-top: 60px;
+}
+
+/* Estilo do conteúdo do popup */
+.sucesso-content {
+    background-color: green;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; /* Largura do popup */
+    max-width: 400px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    position: relative; /* Torna a caixa posicionada para conter o botão de fechar */
+}
+
+/* Estilo para o botão de fechar */
+.messageClose {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Ajuste a posição dentro da caixa */
+    cursor: pointer;
+}
+
+.messageClose:hover,
+.messageClose:focus {
+    color: black;
+    text-decoration: none;
+}
+
+/*deixar base e recheio negrito*/
+.group-title {
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        min-width: 100%;
+    }
+}
